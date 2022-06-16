@@ -28,6 +28,7 @@ document.getElementById("board2").appendChild(renderBoard(botBoard, "bot-board")
 
 const determineAnchorLocation = (arrShipLength, plane, board, boardID) => {
   if(arrShipLength.length == 0) {
+
     initBoard(player, botBoard, "bot-board");
     initGameplay(player, playerBoard, "player-board", botBoard, "bot-board");
 
@@ -42,10 +43,12 @@ const determineAnchorLocation = (arrShipLength, plane, board, boardID) => {
       plane = (plane == 0 ? 1 : 0);
     }
 
-    const oldBoard = document.getElementById(boardID);
-    oldBoard.parentNode.replaceChild(renderBoard(board, boardID), oldBoard);
+    if(arrShipLength.length != 0) {
+      const oldBoard = document.getElementById(boardID);
+      oldBoard.parentNode.replaceChild(renderBoard(board, boardID), oldBoard);
 
-    determineAnchorLocation(arrShipLength, plane, board, boardID);
+      determineAnchorLocation(arrShipLength, plane, board, boardID);
+    }
   });
 
   let shipLength = arrShipLength[arrShipLength.length - 1];
