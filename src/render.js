@@ -2,8 +2,8 @@ const renderBoard = (board, boardID) => {
   const container = document.createElement("div");
 
   container.style.display = "grid";
-  container.style.gridTemplateRows = `repeat(${board.board.length}, 70px)`;
-  container.style.gridTemplateColumns = `repeat(${board.board[0].length}, 70px)`;
+  container.style.gridTemplateRows = `repeat(${board.board.length}, 4rem)`;
+  container.style.gridTemplateColumns = `repeat(${board.board[0].length}, 4rem)`;
 
   container.classList.add("board");
   container.setAttribute("id", boardID);

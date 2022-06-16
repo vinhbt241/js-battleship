@@ -33,8 +33,7 @@ body {
 
 #board-container {
   display: flex;
-  width: 1600px;
-  height: 700px;
+  width: 80vw;
 
   justify-content: space-between;
 }
